@@ -11,7 +11,7 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x87c9e8);
 scene.fog = new THREE.Fog(0x87c9e8, 18, 55);
 
-const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.05, 200);
+const camera = new THREE.PerspectiveCamera(55, window.innerWidth / window.innerHeight, 0.1, 200);
 camera.position.set(3.2, 2.2, 5.2);
 
 const renderer = new THREE.WebGLRenderer({ antialias: true });
@@ -112,7 +112,7 @@ scene.add(track);
 const lookTarget = new THREE.Vector3(0, 1.1, 0);
 let camAngle = 0.55;
 let camHeight = 2.3;
-let camRadius = 7.5;
+let camRadius = 8.2;
 let dragging = false;
 let lastX = 0;
 let lastY = 0;
@@ -140,7 +140,7 @@ renderer.domElement.addEventListener(
   'wheel',
   (e) => {
     if (renderer.xr.isPresenting) return;
-    camRadius = THREE.MathUtils.clamp(camRadius + e.deltaY * 0.01, 3.5, 14);
+    camRadius = THREE.MathUtils.clamp(camRadius + e.deltaY * 0.01, 5.2, 14);
   },
   { passive: true },
 );
